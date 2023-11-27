@@ -1,35 +1,35 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
-             version="3.0">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+    version="3.0">
 
-    <persistence-unit name="example">
+    <persistence-unit name="jpa-initial-practice">
 
-        <class>org.hibernate.example.Book</class>
+        <class>com.andersonhsm.domain.Person</class>
 
         <properties>
 
             <!-- H2 in-memory database -->
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/aulajpa?useSSL=FALSE&amp;serverTimezone=UTC"/>
+                value="jdbc:mysql://localhost:3306/aulajpa?useSSL=FALSE&amp;serverTimezone=UTC" />
 
             <!-- Credentials -->
             <property name="jakarta.persistence.jdbc.user"
-                      value="developer"/>
+                value="root" />
             <property name="jakarta.persistence.jdbc.password"
-                      value="1234567"/>
+                value="1234567" />
 
             <!-- Agroal connection pool -->
             <property name="hibernate.agroal.maxSize"
-                      value="20"/>
+                value="20" />
 
-            <!-- Only export what’s missing in the schema-->
+            <!-- Automatically export the schema -->
             <property name="jakarta.persistence.schema-generation.database.action" value="update" />
 
             <!-- display SQL in console -->
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.highlight_sql" value="true"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.highlight_sql" value="true" />
 
         </properties>
 

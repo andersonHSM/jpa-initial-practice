@@ -1,4 +1,4 @@
-package domain;
+package com.andersonhsm.domain;
 
 import java.io.Serializable;
 
@@ -22,6 +22,8 @@ public class Person implements Serializable {
         this.name = name;
         this.email = email;
     }
+
+    public Person() {}
 
    
     @Override
